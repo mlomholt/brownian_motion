@@ -1,16 +1,16 @@
-Highest evidence for Model 1 (probability 0.999). 
+Highest evidence for Model 1 (probability 0.998). 
 
-Model 1 (probability 0.999):
-Estimated value for log10-evidence: -379.308 +/- 0.063.
-Percent 0.02     0.16     0.50     0.84     0.98     MaxL@    Mean    +/- dev.
-sigma:  1.981    2.057    2.132    2.216    2.293    2.122    2.135   +/- 0.077   
+Model 1 (probability 0.998):
+Estimated value for log10-evidence: -379.361 +/- 0.064.
+Percentile: 0.02     0.16     0.50     0.84     0.98     MaxL@    Mean    +/- dev.
+sigma:      1.979    2.055    2.128    2.207    2.290    2.122    2.131   +/- 0.077   
 log10-Maximal likelihood: -377.229
 
-Model 2 (probability 0.001):
-Estimated value for log10-evidence: -382.208 +/- 0.105.
-Percent 0.02     0.16     0.50     0.84     0.98     MaxL@    Mean    +/- dev.
-sigma:  1.979    2.056    2.127    2.202    2.295    2.114    2.128   +/- 0.076   
-mu_x:  -0.554   -0.385   -0.242   -0.088    0.071   -0.247   -0.240   +/- 0.151   
-mu_y:  -0.175   -0.021    0.124    0.284    0.469    0.131    0.129   +/- 0.153   
+Model 2 (probability 0.002):
+Estimated value for log10-evidence: -381.987 +/- 0.102.
+Percentile: 0.02     0.16     0.50     0.84     0.98     MaxL@    Mean    +/- dev.
+sigma:      1.981    2.053    2.126    2.213    2.297    2.112    2.131   +/- 0.079   
+mu_x:      -0.557   -0.389   -0.242   -0.106    0.063   -0.247   -0.244   +/- 0.151   
+mu_y:      -0.179   -0.014    0.141    0.290    0.447    0.130    0.139   +/- 0.153   
 log10-Maximal likelihood: -376.479
 

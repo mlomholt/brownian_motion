@@ -1,8 +1,16 @@
 function [models,misc] = ns_default_settings(obs,models,misc)
 
 if isfield(misc,'nssummary')
-  if ~isfield(misc,'percentiles')
+  if ~isfield(misc,'percentiles_at')
     misc.percentiles_at=[0.02 0.16 0.5 0.84 0.98];
+  end
+  if ~isfield(misc,'data_id')
+    misc.data_id='';
+  end
+  if ~isfield(models(1),'labels')
+    for i=1:length(models)
+      models(i).labels=1:length(models(i).genu())
+    end
   end
 end
 
