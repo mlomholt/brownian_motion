@@ -1,16 +1,18 @@
-Highest evidence for Model 1 (probability 0.998). 
+Nested sampling run, highest evidence for MODEL 1 (probability 1.000).
 
-Model 1 (probability 0.998):
-Estimated value for log10-evidence: -379.361 +/- 0.064.
-Percentile: 0.02     0.16     0.50     0.84     0.98     MaxL@    Mean    +/- dev.
-sigma:      1.979    2.055    2.128    2.207    2.290    2.122    2.131   +/- 0.077   
-log10-Maximal likelihood: -377.229
+MODEL 1 (probability 1.000):
+log10-evidence: -366.159 +/- 0.059
+log10-maximal likelihood: -364.348
 
-Model 2 (probability 0.002):
-Estimated value for log10-evidence: -381.987 +/- 0.102.
-Percentile: 0.02     0.16     0.50     0.84     0.98     MaxL@    Mean    +/- dev.
-sigma:      1.981    2.053    2.126    2.213    2.297    2.112    2.131   +/- 0.079   
-mu_x:      -0.557   -0.389   -0.242   -0.106    0.063   -0.247   -0.244   +/- 0.151   
-mu_y:      -0.179   -0.014    0.141    0.290    0.447    0.130    0.139   +/- 0.153   
-log10-Maximal likelihood: -376.479
+  Percentile: 0.02     0.16     0.50     0.84     0.98     MaxL@    Mean    +/- dev.
+  sigma:      1.838    1.898    1.974    2.038    2.113    1.971    1.973   +/- 0.069   
+
+MODEL 2 (probability 0.000):
+log10-evidence: -369.546 +/- 0.103
+log10-maximal likelihood: -364.064
+
+  Percentile: 0.02     0.16     0.50     0.84     0.98     MaxL@    Mean    +/- dev.
+  sigma:      1.845    1.909    1.975    2.040    2.118    1.967    1.975   +/- 0.066   
+  mu_x:      -0.133    9.2e-03  0.153    0.288    0.444    0.159    0.150   +/- 0.140   
+  mu_y:      -0.267   -0.139   -2.8e-03  0.132    0.287   -7.4e-03 -3.1e-03 +/- 0.135   
 

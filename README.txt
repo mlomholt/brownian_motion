@@ -7,10 +7,10 @@ trajectory_data.txt
 - An output of make_synthetic_data.m
 
 bm_skel.m
-- A Matlab script that runs the nested sampling algorithm. It is currently set to load the data in the file 'trajectory_data.txt'. Note that the 'invprior' fields of the 'models' arrays are currently set to some strange skewed prior, which you probably want to change
+- A Matlab script that runs the nested sampling algorithm. It is currently set to load the data in the file 'trajectory_data.txt'.
 
 bmwmn_skel.m
-- Similar to bm_skel.m, except that this version includes models measurement noise
+- Similar to bm_skel.m, except that this version includes models with measurement noise
 
 bmwmn_logl.m
 - A matlab function that calculates the log-likelihood for brownian motion with drift and measurement noise

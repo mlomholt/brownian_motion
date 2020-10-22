@@ -1,32 +1,36 @@
-Highest evidence for Model 1 (probability 0.985). 
+Nested sampling run, highest evidence for MODEL 1 (probability 0.615).
 
-Model 1 (probability 0.985):
-Estimated value for log10-evidence: -379.329 +/- 0.064.
-Percentile: 0.02     0.16     0.50     0.84     0.98     MaxL@    Mean    +/- dev.
-sigma:      1.986    2.053    2.127    2.194    2.293    2.122    2.128   +/- 0.072   
-log10-Maximal likelihood: -377.229
+MODEL 1 (probability 0.615):
+log10-evidence: -366.158 +/- 0.059
+log10-maximal likelihood: -364.348
 
-Model 2 (probability 0.002):
-Estimated value for log10-evidence: -381.928 +/- 0.102.
-Percentile: 0.02     0.16     0.50     0.84     0.98     MaxL@    Mean    +/- dev.
-sigma:      1.979    2.053    2.126    2.211    2.291    2.113    2.131   +/- 0.077   
-mu_x:      -0.545   -0.377   -0.239   -0.090    0.058   -0.246   -0.236   +/- 0.147   
-mu_y:      -0.175   -0.022    0.131    0.292    0.435    0.128    0.133   +/- 0.153   
-log10-Maximal likelihood: -376.479
+  Percentile: 0.02     0.16     0.50     0.84     0.98     MaxL@    Mean    +/- dev.
+  sigma:      1.838    1.899    1.969    2.039    2.122    1.971    1.971   +/- 0.070   
 
-Model 3 (probability 0.013):
-Estimated value for log10-evidence: -381.217 +/- 0.089.
-Percentile: 0.02     0.16     0.50     0.84     0.98     MaxL@    Mean    +/- dev.
-sigma:      1.819    1.936    2.042    2.132    2.239    2.087    2.036   +/- 0.100   
-sigma_mn:   0.095    0.246    0.437    0.610    0.790    0.274    0.435   +/- 0.176   
-log10-Maximal likelihood: -377.207
+MODEL 2 (probability 0.000):
+log10-evidence: -369.637 +/- 0.103
+log10-maximal likelihood: -364.064
 
-Model 4 (probability 0.000):
-Estimated value for log10-evidence: -383.891 +/- 0.120.
-Percentile: 0.02     0.16     0.50     0.84     0.98     MaxL@    Mean    +/- dev.
-sigma:      1.801    1.926    2.031    2.137    2.222    2.054    2.028   +/- 0.105   
-mu_x:      -0.531   -0.390   -0.245   -0.096    0.045   -0.238   -0.244   +/- 0.146   
-mu_y:      -0.153   -3.7e-03  0.145    0.289    0.457    0.132    0.144   +/- 0.146   
-sigma_mn:   0.093    0.262    0.454    0.626    0.802    0.341    0.448   +/- 0.177   
-log10-Maximal likelihood: -376.422
+  Percentile: 0.02     0.16     0.50     0.84     0.98     MaxL@    Mean    +/- dev.
+  sigma:      1.832    1.904    1.970    2.045    2.128    1.967    1.974   +/- 0.072   
+  mu_x:      -0.140    0.011    0.155    0.294    0.454    0.162    0.153   +/- 0.140   
+  mu_y:      -0.307   -0.144   -0.014    0.122    0.269   -4.6e-03 -9.4e-03 +/- 0.138   
+
+MODEL 3 (probability 0.385):
+log10-evidence: -366.362 +/- 0.065
+log10-maximal likelihood: -364.022
+
+  Percentile: 0.02     0.16     0.50     0.84     0.98     MaxL@    Mean    +/- dev.
+  sigma:      1.691    1.812    1.911    2.001    2.090    1.852    1.906   +/- 0.096   
+  mn:         7.7e-03  0.047    0.276    0.555    0.728    0.477    0.295   +/- 0.220   
+
+MODEL 4 (probability 0.000):
+log10-evidence: -370.017 +/- 0.109
+log10-maximal likelihood: -363.697
+
+  Percentile: 0.02     0.16     0.50     0.84     0.98     MaxL@    Mean    +/- dev.
+  sigma:      1.671    1.814    1.919    2.016    2.091    1.833    1.911   +/- 0.103   
+  mu_x:      -0.119    0.028    0.164    0.291    0.438    0.166    0.160   +/- 0.135   
+  mu_y:      -0.269   -0.151   -8.9e-03  0.130    0.271   -6.9e-03 -8.9e-03 +/- 0.135   
+  mn:         4.6e-03  0.045    0.265    0.525    0.716    0.496    0.287   +/- 0.209   
 

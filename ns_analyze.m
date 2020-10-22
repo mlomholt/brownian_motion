@@ -1,23 +1,38 @@
-function [percentiles,param_mean,param_stddev,maxLpar] = ns_analyze(samples,model,misc)
+function an = ns_analyze(samples,model,misc)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Calculates percentiles, maximum likelihood parameters,
 % mean and standard deviation for the parameters
 % in samples. If model.add contains a function of the parameters, then
 % percentiles etc. is also calculated for them.
+%
+% Contributors to the code in this file: Michael Lomholt
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
    n_samp = length(samples);
-   if isfield(model,'ntheta') && length(model.ntheta)>0
-     n_theta=model.ntheta;
-   else
-     n_theta = length(samples(1).theta);
-   end
-   thetas=NaN(n_theta,n_samp);
-   for i=1:n_theta
-     for j=1:n_samp
-       thetas(i,j)=samples(j).theta(i);
-     end
-   end
+   left=logical(ones(1,n_samp));
+   un_discs=cellfun(model.disc,{samples(:).theta},'UniformOutput',false);
+   un_conts=cellfun(model.cont,{samples(:).theta},'UniformOutput',false);
+   discs={};
+   thetas={};
+   logps={};
+   logls={};
+   while sum(left)>0
+     next=find(left,1);
+     discs{end+1}=un_discs{next};
+     indices=cellfun(@(x)isequal(x,un_discs{next}),un_discs);
+     thetas=horzcat(thetas,cell2mat({un_conts{indices}}')');
+     left=left-indices;
+     logps=horzcat(logps,cell2mat({samples(indices).logp}));
+     logls=horzcat(logls,cell2mat({samples(indices).logl}));
+   end 
+
+   percentiles={};
+   param_mean = {};
+   param_stddev = {};
+   maxLpar={};
+   maxlogls={};
+   log_sumps={};
+
    if isfield(model,'add')
      for j=1:length(model.add)
        add=NaN(1,n_samp);
@@ -27,18 +42,32 @@ function [percentiles,param_mean,param_stddev,maxLpar] = ns_analyze(samples,mode
        thetas=vertcat(thetas,add);
      end
    end
-   n_theta=length(thetas(:,1));
-   posterior=[samples(1:n_samp).post];
+
+for i=1:length(logps)
+   n_theta=length(thetas{i}(:,1));
    p_mean = zeros(1,n_theta);
    p_var = zeros(1,n_theta);
+   log_sump = ns_logsumexp(logps{i});
+   posterior = exp(logps{i}-log_sump);
    for j=1:n_theta;
-     p_mean(j)=sum(thetas(j,:).*posterior);
-     p_var(j)=sum((thetas(j,:)-p_mean(j)).^2.*posterior);
+     p_mean(j)=sum(thetas{i}(j,:).*posterior);
+     p_var(j)=sum((thetas{i}(j,:)-p_mean(j)).^2.*posterior);
    end
-   param_mean = p_mean(:);
-   param_stddev = sqrt(p_var(:));
-   percentiles=ns_percentiles(misc.percentiles_at,thetas,posterior);
-   maxLpar=thetas(:,end);
+   param_mean = horzcat(param_mean,p_mean);
+   param_stddev = horzcat(param_stddev,sqrt(p_var(:)));
+   percentiles=horzcat(percentiles,ns_percentiles(misc.percentiles_at,thetas{i},posterior));
+   [maxlogl,jmax]=max(logls{i});
+   maxLpar=horzcat(maxLpar,thetas{i}(:,jmax)');
+   maxlogls=horzcat(maxlogls,maxlogl);
+   log_sumps=horzcat(log_sumps,log_sump);
+end
+an.percentiles=percentiles;
+an.param_mean=param_mean;
+an.param_stddev=param_stddev;
+an.maxLpar=maxLpar;
+an.maxlogls=maxlogls;
+an.discs=discs;
+an.log_sumps=log_sumps;
 end
 
 %%% Function that calculates percentiles %%%
