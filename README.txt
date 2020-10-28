@@ -12,6 +12,9 @@ bm_skel.m
 bmwmn_skel.m
 - Similar to bm_skel.m, except that this version includes models with measurement noise
 
+corr_skel.m
+- Similar to bm_skel.m, except that the possibility of correlations is included in a model.
+
 bmwmn_logl.m
 - A matlab function that calculates the log-likelihood for brownian motion with drift and measurement noise
 
@@ -20,6 +23,9 @@ bm_results.txt
 
 bmwmn_results.txt
 - A summary file created by a run of bmwmn_skel.m
+
+corr_results.txt
+- A summary file created by a run of corr_skel.m
 
 ns_*.m
 - Matlab files that contains the program for running the nested sampling algorithm
